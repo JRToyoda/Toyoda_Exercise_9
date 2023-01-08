@@ -15,7 +15,7 @@ class Letter:
             text = text + line + "\n"
             text += "\n"
 
-        text += "Sincerely,\n"
+        text += "Sincerely,\n\n"
         text += self.letterFrom
 
         return text
