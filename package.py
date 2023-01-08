@@ -1,6 +1,21 @@
-from main import Letter
+class Letter:
+    def __init__(self, letterFrom, letterTo):
+        self.letterFrom = letterFrom
+        self.letterTo = letterTo
+        self.body = []
 
-my_message = Letter("Mary", "John")
-my_message.addLine("I am sorry we must part.\nI wish you all the best.")
+    def addLine(self, line):
+        self.body.append(line)
 
-print(my_message.getText())
+    def getText(self):
+        text = "Dear " + self.letterTo + ":\n"
+        text += "\n"
+
+        for line in self.body:
+            text = text + line + "\n"
+            text += "\n"
+
+        text += "Sincerely,\n\n"
+        text += self.letterFrom
+
+        return text
